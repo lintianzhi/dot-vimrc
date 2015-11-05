@@ -232,6 +232,7 @@ Clone in Mac
 4. Install bundles. Launch vim(ignore the errors and they will disappear after installing needed plugins)and run:
 
         :BundleInstall
+        :GoInstallBinaries  // For Golang
 
 Thst's it!
 
