@@ -24,6 +24,7 @@ set cursorline cursorcolumn
 
 " search
 set incsearch
+set hlsearch
 "set highlight 	" conflict with highlight current line
 set ignorecase
 set smartcase

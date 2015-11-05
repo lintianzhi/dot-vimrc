@@ -8,6 +8,11 @@ call vundle#rc()
 " required!
 Bundle 'gmarik/vundle'
 
+"-----------------
+" Golang
+"-----------------
+Bundle 'jnwhiteh/vim-golang'
+
 "------------------
 " Code Completions
 "------------------
