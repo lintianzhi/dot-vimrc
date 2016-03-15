@@ -14,13 +14,16 @@ syntax on
 "--------
 " color scheme
 set background=dark
-color solarized
+" colorscheme solarized
 colorscheme Tomorrow-Night-Eighties
+" colorscheme Tomorrow-Night-Blue
+" colorscheme pablo
 
 " highlight current line
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
-set cursorline cursorcolumn
+" au WinLeave * set nocursorline nocursorcolumn
+" au WinEnter * set cursorline cursorcolumn
+" set cursorline cursorcolumn
+set cursorline
 
 " search
 set incsearch
@@ -57,7 +60,7 @@ set softtabstop=4   " backspace
 set shiftwidth=4    " indent width
 " set textwidth=79
 " set smarttab
-set expandtab       " expand tab to space
+" set expandtab       " expand tab to space
 
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
@@ -273,5 +276,12 @@ if has("gui_running")
 endif
 
 " for Golang
-let g:go_fmt_command = "goimports"
+" let g:go_fmt_command = "goimports"
 map <C-i> :GoDef<CR>
+set rtp+=~/gopath/src/github.com/golang/lint/misc/vim
+" autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>d <Plug>(go-referrers)
+
+" edit
+map <C-n> yiw
