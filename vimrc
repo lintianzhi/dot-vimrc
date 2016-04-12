@@ -326,3 +326,16 @@ let g:vimwiki_camel_case = 0
 let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_menu = ''
 let g:vimwiki_CJK_length = 1
+
+" open link
+function! HandleURL()
+  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
+  echo s:uri
+  if s:uri != ""
+	  " http://baidu.com/
+    exec "!open '".s:uri."'"
+  else
+    echo "No URI found in line."
+  endif
+endfunction
+map <leader>u :call HandleURL()<cr>
