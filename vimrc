@@ -162,18 +162,52 @@ let NERDCompactSexyComs=1
 " ZenCoding
 let g:user_emmet_expandabbr_key='<C-j>'
 
-" powerline
-"let g:Powerline_symbols = 'fancy'
-
 " NeoComplCache
 let g:neocomplcache_enable_at_startup=1
-let g:neoComplcache_disableautocomplete=1
-"let g:neocomplcache_enable_underbar_completion = 1
-"let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplcache_enable_auto_select = 1
 set completeopt-=preview
+imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
+smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
+imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
+smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType c setlocal omnifunc=ccomplete#Complete
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.go = '\h\w*\.\?'
+
+" powerline
+"let g:Powerline_symbols = 'fancy'
+
+"" NeoComplCache
+"let g:neocomplcache_enable_at_startup=1
+"let g:neoComplcache_disableautocomplete=0
+""let g:neocomplcache_enable_underbar_completion = 1
+""let g:neocomplcache_enable_camel_case_completion = 1
+"let g:neocomplcache_enable_smart_case=1
+"let g:neocomplcache_min_syntax_length = 3
+"let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+"set completeopt-=preview
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+" <TAB>: completion.
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>  neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y> neocomplcache#close_popup()
+inoremap <expr><C-e> neocomplcache#cancel_popup()"
 
 imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
@@ -192,8 +226,8 @@ endif
 let g:neocomplcache_omni_patterns.erlang = '[a-zA-Z]\|:'
 
 " SuperTab
-" let g:SuperTabDefultCompletionType='context'
-let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
 let g:SuperTabRetainCompletionType=2
 
 " ctrlp
@@ -285,3 +319,10 @@ au FileType go nmap <Leader>d <Plug>(go-referrers)
 
 " edit
 map <C-n> yiw
+
+" vimwiki
+let g:vimwiki_list = [{'path': '$HOME/Dropbox/wiki'}]
+let g:vimwiki_camel_case = 0
+let g:vimwiki_hl_cb_checked = 1
+let g:vimwiki_menu = ''
+let g:vimwiki_CJK_length = 1
