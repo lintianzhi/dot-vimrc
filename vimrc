@@ -338,4 +338,10 @@ function! HandleURL()
     echo "No URI found in line."
   endif
 endfunction
-map <leader>u :call HandleURL()<cr>
+map <leader>u :call HandleURL()<CR><CR>
+
+" set yy copy to system clipboard
+"set clipboard=unnamed
+
+vmap <C-x> :!pbcopy<CR>
+vmap <C-c> :w !pbcopy<CR><CR>
