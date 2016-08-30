@@ -11,9 +11,11 @@ Bundle 'gmarik/vundle'
 "------------------
 " Code Completions
 "------------------
-Bundle 'Shougo/neocomplcache'
-Bundle 'Raimondi/delimitMate'
-Bundle 'ervandew/supertab'
+" Bundle 'Shougo/neocomplcache'
+" Bundle 'Shougo/neocomplete.vim'
+Bundle 'jiangmiao/auto-pairs'
+" Bundle 'ervandew/supertab'
+Bundle 'roxma/SimpleAutoComplPop'
 
 "-----------------
 " Fast navigation
