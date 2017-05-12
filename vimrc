@@ -274,6 +274,7 @@ au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>d <Plug>(go-referrers)
 
 let g:go_type_info = 1
+let g:go_def_mode = 'godef'
 
 " edit
 map <C-n> yiw
